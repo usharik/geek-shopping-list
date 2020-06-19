@@ -17,6 +17,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column
+    private String email;
+
     @OneToMany(
             mappedBy = "user",
             cascade = CascadeType.ALL,
@@ -57,5 +60,13 @@ public class User {
 
     public void setShoppingItems(List<ShoppingItem> shoppingItems) {
         this.shoppingItems = shoppingItems;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
